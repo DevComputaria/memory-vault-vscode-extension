@@ -1,0 +1,1 @@
+export { openDashboard } from './dashboard';

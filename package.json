@@ -1,0 +1,95 @@
+{
+  "name": "copilot-memory-vault",
+  "displayName": "Copilot Memory Vault",
+  "description": "Memória persistente para Copilot com captura de terminal/workspace/git, busca semântica local e dashboard",
+  "version": "0.1.0",
+  "publisher": "cleilson",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Other"
+  ],
+  "keywords": [
+    "copilot",
+    "memory",
+    "vscode",
+    "sqlite",
+    "embeddings",
+    "azure-devops",
+    "eks"
+  ],
+  "icon": "media/icon.png",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onChatParticipant:memory"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "memory.openDashboard",
+        "title": "Memory Vault: Open Dashboard",
+        "category": "Memory Vault"
+      },
+      {
+        "command": "memory.indexWorkspace",
+        "title": "Memory Vault: Index Workspace Now",
+        "category": "Memory Vault"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "memory",
+        "name": "memory",
+        "fullName": "Memory Vault",
+        "description": "Memória persistente do projeto para auxiliar respostas do Copilot"
+      }
+    ],
+    "configuration": {
+      "title": "Copilot Memory Vault",
+      "properties": {
+        "memoryVault.captureTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Captura eventos de terminal para memória"
+        },
+        "memoryVault.captureWorkspace": {
+          "type": "boolean",
+          "default": true,
+          "description": "Captura eventos de workspace para memória"
+        },
+        "memoryVault.captureGit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Captura eventos Git para memória"
+        },
+        "memoryVault.secretScan": {
+          "type": "boolean",
+          "default": true,
+          "description": "Bloqueia persistência de conteúdo com secrets detectados"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "echo 'lint not configured yet'",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.17.2",
+    "better-sqlite3": "^11.8.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^20.17.24",
+    "@types/vscode": "^1.95.0",
+    "typescript": "^5.7.3"
+  }
+}

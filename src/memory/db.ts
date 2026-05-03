@@ -1,0 +1,1 @@
+export { MemoryDatabase } from './database';
