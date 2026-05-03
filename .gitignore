@@ -61,6 +61,7 @@ web_modules/
 
 # Output of 'npm pack'
 *.tgz
+*.vsix
 
 # Yarn Integrity file
 .yarn-integrity
@@ -82,6 +83,8 @@ out
 .nuxt
 dist
 .output
+vector_db/
+memory_vault.db
 
 # Gatsby files
 .cache/

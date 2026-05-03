@@ -1,0 +1,23 @@
+# Exclude source and development artifacts from VSIX
+src/**
+**/*.ts
+**/*.tsbuildinfo
+
+# Keep compiled output maps out of package
+out/**/*.map
+
+# VCS and CI metadata
+.git/**
+.github/**
+
+# Local/test artifacts
+.vscode-test/**
+.DS_Store
+*.log
+memory_vault.db
+vector_db/**
+
+# Optional: reduce package size for node_modules
+node_modules/.bin/**
+node_modules/**/*.d.ts
+node_modules/**/*.js.map

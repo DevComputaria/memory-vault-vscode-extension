@@ -1,13 +1,16 @@
 # Copilot Memory Vault
 
-Extensão VS Code em TypeScript que cria memória persistente para uso com Copilot:
+Extensão VS Code em TypeScript que cria **memória persistente** para uso com GitHub Copilot.
+
+## Funcionalidades
 
 - Chat Participant `@memory`
-- Captura de Terminal + Workspace + Git
-- SQLite local + vetores (embeddings em BLOB)
-- Dashboard Webview com React (via CDN no webview)
+- Captura automática de Terminal, Workspace e Git
+- SQLite local + embeddings (BLOB)
+- Dashboard Webview com React via CDN
 - Scanner de secrets + regras de privacidade
-- Memórias especializadas: Build, Infra, Pipeline, Bug, Architecture
+- Memórias especializadas: `build`, `infra`, `pipeline`, `bug`, `architecture`
+- Recuperação inteligente de contexto (sessão + branch + bugs + lexical/semântica)
 
 ## Rodando localmente
 
@@ -25,3 +28,7 @@ Extensão VS Code em TypeScript que cria memória persistente para uso com Copil
 - O participante usa API de chat via fallback em `any` para reduzir quebra entre versões de VS Code.
 - Embeddings são locais (`@xenova/transformers`) e salvos no SQLite.
 - Segredos detectados não são persistidos.
+
+---
+
+**Status atual:** v0.1.0 (base funcional consolidada).
