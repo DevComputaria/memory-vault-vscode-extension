@@ -36,8 +36,13 @@
         "category": "Memory Vault"
       },
       {
+        "command": "memory.indexProject",
+        "title": "Memory Vault: Index Project Now",
+        "category": "Memory Vault"
+      },
+      {
         "command": "memory.indexWorkspace",
-        "title": "Memory Vault: Index Workspace Now",
+        "title": "Memory Vault: Index Workspace Now (Legacy)",
         "category": "Memory Vault"
       }
     ],

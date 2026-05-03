@@ -36,7 +36,7 @@ export async function activate(ctx: vscode.ExtensionContext): Promise<void> {
   );
 
   ctx.subscriptions.push(
-    vscode.commands.registerCommand('memory.indexWorkspace', async () => {
+    vscode.commands.registerCommand('memory.indexProject', async () => {
       if (!db) {
         return;
       }
@@ -60,6 +60,12 @@ export async function activate(ctx: vscode.ExtensionContext): Promise<void> {
       }
 
       void vscode.window.showInformationMessage(`Memory Vault: indexação concluída (${captured} arquivos).`);
+    })
+  );
+
+  ctx.subscriptions.push(
+    vscode.commands.registerCommand('memory.indexWorkspace', async () => {
+      await vscode.commands.executeCommand('memory.indexProject');
     })
   );
 

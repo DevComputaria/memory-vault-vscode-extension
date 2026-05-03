@@ -16,7 +16,8 @@ Extensão VS Code em TypeScript que cria memória persistente para uso com Copil
 3. Aperte `F5` para abrir Extension Development Host
 4. Use:
    - comando `Memory Vault: Open Dashboard`
-   - comando `Memory Vault: Index Workspace Now`
+   - comando `Memory Vault: Index Project Now` (recomendado)
+   - comando `Memory Vault: Index Workspace Now (Legacy)`
    - chat `@memory <sua pergunta>`
 
 ## Observações
